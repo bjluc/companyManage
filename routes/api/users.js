@@ -30,7 +30,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     try {
       let user = await User.findOne({ email });
 
@@ -40,17 +40,10 @@ router.post(
           .json({ errors: [{ msg: 'User already exists' }] });
       }
 
-      // Get users gravatar
-      const avatar = gravatar.url(email, {
-        s: '200',
-        r: 'pg',
-        d: 'mm'
-      });
-
       user = new User({
         name,
         email,
-        avatar,
+        role,
         password
       });
 

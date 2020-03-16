@@ -4,6 +4,12 @@ const router = express.Router();
 // @route   GET api/profile
 // @desc    Test route
 // @access  Public
-router.get('/', (req, res) => res.send('Profile Route'));
+router.get('/', (req, res) => {
+  try {
+
+  } catch (err) {
+    console.error(err.message)
+  }
+});
 
 module.exports = router;
