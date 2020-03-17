@@ -16,11 +16,11 @@ const CompanySchema = new mongoose.Schema({
     type: String
   },
   email: {
-    type: String,
+    type: String
   },
   type: {
     type: String,
-    enum: ['Bank', 'Investment Bank', 'stock Exchange']
+    enum: ['Bank', 'Investment Bank', 'Stock Exchange', 'Other']
   },
   country: {
     type: String,
@@ -35,8 +35,7 @@ const CompanySchema = new mongoose.Schema({
   },
   assignedTo: {
     type: String,
-    enum: ['Tanya', 'Sasha', 'Anna'],
-    default: 'Tanya'
+    enum: ['Tanya', 'Sasha', 'Anna', 'Uriy']
   },
   date: {
     type: Date,
